@@ -2,14 +2,23 @@
 .navbar{
 
    
-    background-color: #002B5B;
+  background-image: linear-gradient(to top, #008793, #004d7a, #051937 );
     position: absolute;
+    width:  auto;
     top: 0;
     right: 0;
-    width: auto!important;
     left: 0;
-    z-index: 20;
+    z-index: 1;
   }
+
+.btn-primary{
+  border-radius: 90px;
+}
+
+.btn-info{
+  border-radius: 90px;
+}
+
 
 h3{
 

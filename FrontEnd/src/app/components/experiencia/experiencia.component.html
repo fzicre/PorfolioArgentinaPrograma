@@ -1,35 +1,50 @@
 <div class="row">
-  <h1>Experiencia laboral</h1>
-  <div class="col-lg-2">
-      <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
-          Nueva Experiencia
-      </button>
+ 
+
+    <caption><h1>Experiencia laboral</h1></caption>
+  <div>
+    <button type="button" class="btn btn-info btn-lg btn-block" routerLink="/nuevaexp" *ngIf="isLogged">
+      Agregar Experiencia Laboral
+      <i class="bi bi-file-earmark-diff"></i>
+    </button>
+    <br>
+    <br>
   </div>
 
-  <div class="col lg 1"></div>
-  <div class="col-lg-11">
-      <table class="table">
-          <tbody>
-              <tr *ngFor="let Experiencia of expe">
-                  <td>
-                      <h2>{{Experiencia.nombreE}}</h2>
-                  </td>
-                  <td>{{Experiencia.descripcionE}}</td>
-                  <td *ngIf="isLogged">
-                      <button class="btn btn-light" routerLink="/editexp/{{Experiencia.id}}">
-                          <i class="bi bi-pencil-fill"></i> EDITAR</button>
-                  </td>
-                  <td *ngIf="isLogged">
-                      <button class="btn btn-danger" (click)="delete(Experiencia.id)">
-                          <i class="bi bi-trash"></i> BORRAR</button>
-                  </td>
-              </tr>
-          </tbody>
-      </table>
+
+
+
+  <div id="table">
+    <table>
+      
+      <tbody>
+          <tr *ngFor="let Experiencia of expe">
+            <td>
+              <h2>Empresa:</h2>
+              <h3>{{Experiencia.nombreE}}</h3>
+            </td>
+            <td>
+              <h2>Puesto:</h2>
+              <h3>{{Experiencia.descripcionE}}</h3>
+            </td>
+            <td>
+              <h2>Fecha:</h2>
+              <h3>{{Experiencia.fechaE}}</h3>
+            </td>
+            <td>
+              <h2>Observaciones:</h2>
+              <h3>{{Experiencia.obsE}}</h3>
+            </td>
+            <td *ngIf="isLogged">
+              <button class="btn btn-success" routerLink="/editexp/{{Experiencia.id}}">
+                <i class="bi bi-pencil-fill"></i></button>
+          
+              <button class="btn btn-danger" (click)="delete(Experiencia.id)">
+                <i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
   </div>
 
 </div>
-
-
-
-

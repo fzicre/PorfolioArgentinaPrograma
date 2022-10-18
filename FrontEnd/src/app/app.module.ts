@@ -7,7 +7,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { AcercadeComponent } from './components/acercade/acercade.component';
-import { AboutmeComponent } from './components/aboutme/aboutme.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -23,6 +22,16 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia/edit-experiencia.component';
 import { NeweducacionComponent } from './components/educacion/neweducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
+import { EditSkillComponent } from './components/skills/edit-skill.component';
+import { NewSkillComponent } from './components/skills/new-skill.component';
+import { EditAcercaDeComponent } from './components/acercade/edit-acerca-de.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
+import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
+import { EditBannerComponent } from './components/banner/edit-banner.component';
+import { NewBannerComponent } from './components/banner/new-banner.component';
 
 
 
@@ -33,7 +42,6 @@ import { EditeducacionComponent } from './components/educacion/editeducacion.com
     LogoComponent,
     BannerComponent,
     AcercadeComponent,
-    AboutmeComponent,
     ExperienciaComponent,
     EducacionComponent,
     SkillsComponent,
@@ -45,6 +53,14 @@ import { EditeducacionComponent } from './components/educacion/editeducacion.com
     EditExperienciaComponent,
     NeweducacionComponent,
     EditeducacionComponent,
+    EditSkillComponent,
+    NewSkillComponent,
+    EditAcercaDeComponent,
+    EditProyectoComponent,
+    NewProyectoComponent,
+    EditBannerComponent,
+    NewBannerComponent,
+    
     
     
   ],
@@ -54,7 +70,9 @@ import { EditeducacionComponent } from './components/educacion/editeducacion.com
     NgCircleProgressModule.forRoot({
     }),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
     ],
 
   providers: [interceptorProvider],

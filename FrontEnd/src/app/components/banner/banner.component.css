@@ -1,9 +1,30 @@
-.row{
+.container{
 
-   
-    width: auto;
+    
     height: 500px;
-background-image: url("../../../assets/banner.png");
-background-size: cover;
+    
 }
 
+.image-widescreen{
+   
+    position: relative;
+    padding-top: 73px;
+    top: 0;
+    left: 0;
+    width: 100%;
+ margin-top: 0;
+ margin-bottom: 0;
+ margin-left: 0;
+ margin-right: 0;
+    overflow-y: hidden;
+    z-index: 0;
+  }
+  
+
+  
+  .boton{
+    
+       z-index: 100;
+       float: right;
+       position: relative;
+    }

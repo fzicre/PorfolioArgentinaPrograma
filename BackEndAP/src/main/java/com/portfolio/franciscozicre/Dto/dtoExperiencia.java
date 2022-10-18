@@ -16,13 +16,19 @@ public class dtoExperiencia {
     private String nombreE;
     @NotBlank
     private String descripcionE;
+    @NotBlank
+    private String fechaE;
+    @NotBlank
+    private String obsE;
 
     public dtoExperiencia() {
     }
 
-    public dtoExperiencia(String nombreE, String descripcionE) {
+    public dtoExperiencia(String nombreE, String descripcionE, String fechaE, String obsE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;
+        this.fechaE = fechaE;
+        this.obsE = obsE;
     }
 
     public String getNombreE() {
@@ -41,5 +47,20 @@ public class dtoExperiencia {
         this.descripcionE = descripcionE;
     }
     
+    public String getFechaE() {
+        return fechaE;
+    }
+
+    public void setFechaE(String fechaE) {
+        this.fechaE = fechaE;
+    }
+    
+    public String getObsE() {
+        return obsE;
+    }
+
+    public void setObsE(String obsE) {
+        this.obsE = obsE;
+    }
     
 }

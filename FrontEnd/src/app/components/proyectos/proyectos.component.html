@@ -1,24 +1,45 @@
 <div class="row">
-    <h1>Proyectos</h1>
-    <div class="col-lg 11">
-        <ul>
-            <li>
-                <h3>Devbot Helper - Botbuilder para Webex usando Botkit</h3>
-                <p>3er puesto en el Hackathon de Webex 2022 </p>
-                href="https://github.com/fzicre/Botkit-Webex-DevBot-Template"
-                
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <h3>Premios y certificaciónes</h3>
-                <p>3er puesto en Cisco Webex Hackathon 2022 | Project DevBot </p>
-                <p>Webex Power User Ambassador</p>
-                <p>Webex Associate Ambassador IT Admin</p>
-                <p>Webex Associate Ambassador Adoption Advocate</p>
-                <p>Junior Achievement Alumni</p>
+ 
 
-            </li>
-        </ul>
-    </div>
+    <caption><h1>Proyectos</h1></caption>
+  <div>
+    <button type="button" class="btn btn-info btn-lg btn-block" routerLink="/newpro" *ngIf="isLogged">
+      Agregar Proyecto
+      <i class="bi bi-file-earmark-diff"></i>
+    </button>
+    <br>
+    <br>
+  </div>
+
+
+
+
+  <div id="table">
+    <table>
+      
+      <tbody>
+          <tr *ngFor="let Proyecto of proyecto">
+            <td></td>
+            <td>
+              <h2>Nombre del Proyecto:</h2>
+              <h3>{{Proyecto.nombre}}</h3>
+            </td>
+            
+            <td>
+            <h2>Descripción del proyecto:</h2>
+              <h3>{{Proyecto.descripcion}}</h3>
+            </td>
+            <td></td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-success" routerLink="/editpro/{{Proyecto.id}}">
+                <i class="bi bi-pencil-fill"></i></button>
+          
+                <button class="btn btn-danger" (click)="delete(Proyecto.id)">
+                    <i class="bi bi-trash-fill"></i></button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>

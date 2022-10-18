@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class EducacionService {
-  URL = 'http://localhost:8080' + '/educacion/';
+  URL = environment.URL + '/educacion/';
   constructor(private httpClient : HttpClient) { }
 
 public lista(): Observable<Educacion[]>{

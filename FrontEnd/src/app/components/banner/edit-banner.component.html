@@ -1,0 +1,23 @@
+<div class="container" *ngIf="banner">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre del titulo del Banner</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="banner.nombre" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="bgi">Foto</label>
+                    <input type="file" class="form-control" id="bgi" name="bgi"  (change)="uploadImage($event)" accept=".jpg, .png, .jpeg, .gif">
+                </div>
+                <div class src="bgi">
+                <img [src]="bgImage.url" width="500px">
+            </div>
+                <button class="btn btn-primary">
+                    Agregar Banner
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

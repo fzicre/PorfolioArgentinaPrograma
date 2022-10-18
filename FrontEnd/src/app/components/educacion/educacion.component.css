@@ -1,23 +1,136 @@
-.row{   
-    padding: 20px;
-    width: auto;
-    padding-top: 40px;
-}
-div{    
-    background-color: #4493ad;
-    padding-left: 70px;
-    padding-right: 70px;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+.row{
     
-}
-h3,h6{
-    display: inline;
-    align-items: center;
-    font-weight: bold;
-    
-    
-}
-h1{
+  
+   text-align: center;
+   font-family: 'Open Sans'; 
+    }
 
+    h2{
+      font-size: medium;
+      font-weight: bold;
+      color:#c5c1c1;
+      text-align: left;
+  
+  }
+  
+  h1{
+      text-align: center;
+      font-weight: bold;
+      color:#FFFF;
+      
+  }
+  
+  h3{
+      font-weight: bold;
+      font-size: medium;
+      color: #ffff;
+      text-align: left;
+  
+  }
+
+table {
+    
+    
+    
+    margin:auto;
+    padding: auto;
+    width: 90%;
+    table-layout: fixed;
+    margin-bottom: 50px;
+  }
+  
+ caption {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: x-large;
+    color: #ddd;
     text-align: center;
-
-}
+  }
+  
+  table tr {
+    
+    padding: .35em;
+  }
+  
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+      
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+      
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* general styling */
+  body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.25;
+  }

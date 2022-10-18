@@ -1,60 +1,49 @@
 <div class="row">
-<div class='container-fluid'>
-    
-  <h1 class='title'> Skills </h1>
 
-  <div class='skillBox'>
+  <caption><h1>Hard & Soft skills</h1></caption>
+  <div>
+      <button type="button" routerLink="/newskill" class="btn btn-info btn-lg btn-block" *ngIf="isLogged">Nueva Skill
+        <i class="bi bi-file-earmark-diff"></i>
+      </button>
+      <br>
+      <br>
+  </div>
 
-    <div class='skillBar'>
-      <a class='ion-social-html5-outline'> </a>
-      <span class='skillName'> HTML5 </span>
-      <div class="skillArea">
-        <span class="skill-HTML"> </span>
-      </div><!-- skillArea -->
-    </div><!-- skillBar -->
 
-    <div class='skillBar'>
-      <a class='ion-social-css3-outline'> </a>
-      <span class='skillName'> CSS3 </span>
-      <div class="skillArea">
-        <span class="skill-CSS"> </span>
-      </div><!-- skillArea -->
-    </div><!-- skillBar -->
+  <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
+      <circle-progress 
+      [percent]="(skill.porcentaje)" 
+      [radius]="90" [imageSrc]="''" 
+      [outerStrokeGradient]="true"
+      [title]="(skill.nombre)"
+      [titleColor]="'#ffff'"
+      [showTitle]="true" 
+      [showImage]="false" 
+      [imageHeight]="70" 
+      [imageWidth]="70" 
+      [showUnits]="false"
+      [showSubtitle]="false" 
+      [outerStrokeWidth]="10" 
+      [innerStrokeWidth]="0" 
+      [outerStrokeColor]="'#4882c3'"
+      [innerStrokeColor]="'#e7e8ea'"
+      [outerStrokeGradientStopColor]="'#53a9ff'"
+      [outerStrokeGradient]="true"
+      [animation]="true" 
+      [animationDuration]="1000">
+      [clockwise]="false"
+      </circle-progress>
 
-    <div class='skillBar'>
-      <a class='ion-social-javascript'> </a>
-      <span class='skillName'> JAVASCRIPT </span>
-      <div class="skillArea">
-        <span class="skill-JS"> </span>
-      </div><!-- skillArea -->
-    </div><!-- skillBar -->
-
-    <div class='skillBar'>
-      <a class='ion-social-angular-outline'> </a>
-      <span class='skillName'> ANGULAR </span>
-      <div class="skillArea">
-        <span class="skill-A4"> </span>
-      </div><!-- skillArea -->
-    </div><!-- skillBar -->
-
-    <div class='skillBar'>
-      <a class='ion-social-nodejs'> </a>
-      <span class='skillName'> NODEJS </span>
-      <div class="skillArea">
-        <span class="skill-NODEJS"> </span>
-      </div><!-- skillArea -->
-    </div><!-- skillBar -->
-
-    <div class='skillBar'>
-      <a class='ion-social-python'> </a>
-      <span class='skillName'> PYTHON </span>
-      <div class="skillArea">
-        <span class="skill-python"> </span>
-      </div><!-- skillArea -->
-    </div><!-- skillBar -->
-
-  </div><!-- skillBox -->
-
-</div><!-- container -->
-
+      <div>
+          <td *ngIf="isLogged">
+              <button class="btn btn-success" routerLink="/editskill/{{skill.id}}">
+                  <i class="bi bi-pencil-fill"></i></button>
+          </td>
+          <td *ngIf="isLogged">
+              <button class="btn btn-danger" (click)="delete(skill.id)">
+                  <i class="bi bi-trash-fill"></i></button>
+          </td>
+      </div>
+      
+  </div>
 </div>

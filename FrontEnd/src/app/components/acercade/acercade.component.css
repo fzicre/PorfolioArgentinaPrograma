@@ -1,12 +1,16 @@
 .row {
-  padding: 20px;
-
+  padding: 90px;
+  border-radius: 0px 0px 00px 200px;
 }
+
+
 
 div {
   background-color: #ffff;
-  text-align: center;
+  text-align: left;
+  
 }
+
 
 @media (min-width: 576px) {
   #pic {
@@ -18,8 +22,13 @@ div {
     top: 350px;
   }
 
+ 
+
 
 }
+
+
+
 
 @media (max-width: 575px) {
   #pic {
@@ -28,16 +37,19 @@ div {
     border-radius: 100%;
     border: 2px solid #fff;
     left: 20%;
-    top: 340px;
+    top: 330px;
+    
+  }
+
+  div {
+    background-color: #ffff;
+    text-align: center;
   }
 
 
+
+
 }
 
-
-#nombre {
-  font-weight: bold;
-  font-size: large;
-  margin-top: 20%;
-
-}
+/**
+**/

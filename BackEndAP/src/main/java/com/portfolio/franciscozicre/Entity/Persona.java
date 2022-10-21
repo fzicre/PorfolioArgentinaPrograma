@@ -35,7 +35,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img) {
+    public Persona(String nombre, String apellido, String descripcion, String titulo, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;

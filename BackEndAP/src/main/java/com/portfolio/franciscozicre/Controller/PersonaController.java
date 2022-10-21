@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = {"https://argentina-programa-portf-de743.web.app","http://localhost:4200"})
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://argentina-programa-portf-de743.web.app/")
 @RequestMapping("/personas")
 public class PersonaController {
    @Autowired
@@ -50,8 +53,9 @@ public class PersonaController {
         return new ResponseEntity(new Mensaje("Entrada eliminada"), HttpStatus.OK);
     }
     
+     */
     
-    @PostMapping("/create")
+    @PostMapping("/crear")
     public ResponseEntity<?> create(@RequestBody dtoPersona dtopersona){
         if(StringUtils.isBlank(dtopersona.getNombre())){
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
@@ -60,14 +64,12 @@ public class PersonaController {
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
         
-        Persona persona = new Persona(
-                dtopersona.getNombre(), dtopersona.getDescripcion()
-            );
+        Persona persona = new Persona(dtopersona.getNombre(),dtopersona.getApellido(),dtopersona.getDescripcion(),dtopersona.getTitulo(),dtopersona.getImg());
         personaService.save(persona);
         return new ResponseEntity(new Mensaje("Entrada creada"), HttpStatus.OK);
                 
     }
-    */
+   
     
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoPersona dtopersona){

@@ -29,9 +29,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @author PCMR
  */
 @RestController
-@RequestMapping("/educacion")
-@CrossOrigin(origins = "http://localhost:4200")
-//@CrossOrigin(origins = "x")
+@RequestMapping("/educacion")        
+//@CrossOrigin(origins = {"https://argentina-programa-portf-de743.web.app","http://localhost:4200"})
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://argentina-programa-portf-de743.web.app/")
 public class CEducacion {
     @Autowired
     Seducacion sEducacion;

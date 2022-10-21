@@ -10,5 +10,6 @@ export const environment = {
     measurementId: 'G-DX9V3RSWDC',
   },
   production: true,
-  URL: 'http://localhost:8080'
+  URL: 'https://backendzicre.herokuapp.com'
+  //URL: 'http://localhost:8080'
 };
